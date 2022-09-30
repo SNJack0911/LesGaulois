@@ -26,12 +26,12 @@ public class Gaulois {
 	}
 	
 	public static void main(String[] args) {
-		//Todo create a main able to test the class Gaulois
+		Gaulois asterix = new Gaulois ("asterix",8);
 	}
-	@Override
-	public String toString() {
-		return "Gaulois [nom=" + nom + ", force=" + force + ", effetPotion=" + effetPotion + "]";
-	}
+	/*
+	 * @Override public String toString() { return "Gaulois [nom=" + nom +
+	 * ", force=" + force + ", effetPotion=" + effetPotion + "]"; }
+	 */
 }
 
 
