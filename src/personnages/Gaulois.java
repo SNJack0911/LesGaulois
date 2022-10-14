@@ -20,22 +20,25 @@ public class Gaulois {
 	}
 
 	private String prendreParole() {
-
-		return "Le Gaulois" + nom + ":";
+		return "Le Gaulois " + nom + ":";
 	}
 
 	public void frapper(Romain romain) {
-		System.out.println(nom + "evoie un grand coup dans la machoire de" + romain.getNom());
-		romain.recevoirCoup(force / 3);
+		System.out.println(nom + " evoie un grand coup dans la machoire de " + romain.getNom());
+		romain.recevoirCoup((force / 3)*effetPotion);
+	}
+	public void boirePotion(int forcePotion) {
+		parler(" Merci Druide, je sens que ma force est "+ forcePotion+" décuplée."
+					+ "");
 	}
 
 	public static void main(String[] args) {
 		Gaulois asterix = new Gaulois("asterix", 8);
-		System.out.println();
+		System.out.println(asterix);
+		asterix.boirePotion(2);
 	}
-	/*
-	 * @Override public String toString() { return "Gaulois [nom=" + nom +
-	 * ", force=" + force + ", effetPotion=" + effetPotion + "]"; }
-	 */
-	 
+	
+	public String toString() { 
+		return "Gaulois [nom=" + nom +", force=" + force + ", effetPotion=" + effetPotion + "]"; }
+	
 }
