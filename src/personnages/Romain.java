@@ -3,9 +3,13 @@ package personnages;
 public class Romain {
 	private String nom;
 	private int force;
-	public Romain(String nom, int force) {
+	private Equipement[] equipements;
+	private int nbEquipements =0;
+	public Romain(String nom, int force,int nbEquipements ) {
 		this.nom = nom;
 		this.force = force;
+		this.nbEquipements=nbEquipements;
+		equipements= new Equipement[2];
 		assert force>0;
 	}
 	
@@ -30,10 +34,30 @@ public class Romain {
 			parler("J'abandonne");
 		}
 	}
+	
+	public void sEquiper( Equipement equipement) {
+		switch ( nbEquipements ) {
+		case 2:
+			System.out.println("Le soldat "+nom+" est déjà bien protégé !");
+			break;
+		case 1:
+			if (equipements[0] == equipement){
+				System.out.println("Le soldat "+nom+" possede deja un "+equipement.nom);
+				break;
+			}
+		default:
+			equipements[nbEquipements]=equipement;
+			nbEquipements+=1;
+			System.out.println("Le soldat "+nom+" s'equipe avec un "+equipement.nom);
+		}
+	}
+	
 	public static void main(String[] args) {
-		Romain minus= new Romain("Minus",6);
-		System.out.println(minus);
-		System.out.println(Equipement.CASQUE);
+		Romain minus= new Romain("Minus",6,0);
+		minus.sEquiper(Equipement.CASQUE);
+		minus.sEquiper(Equipement.CASQUE);
+		minus.sEquiper(Equipement.BOUCLIER);
+		minus.sEquiper(Equipement.CASQUE);
 	}
 
 	@Override
