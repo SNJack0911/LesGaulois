@@ -20,7 +20,7 @@ public class Musee {
 	private String list="";
 	public String extraireInstructionsCaml() {
 		for (int i = 0; i<=nbTrophee && trophees[i]!= null;i++) {
-			list += "     "+trophees[i].getGaulois().getNom()+","+ trophees[i].getEquipement().nom+";\n";
+			list += "     \""+trophees[i].getGaulois().getNom()+"\",\""+ trophees[i].getEquipement().nom+"\";\n";
 		}
 		return "let musee = [ \n" + list +" ]";
 	}

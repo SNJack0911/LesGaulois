@@ -1,7 +1,7 @@
 package personnages;
 
 public enum Equipement {
- CASQUE("Casque"),BOUCLIER("Bouclier");
+ CASQUE("casque"),BOUCLIER("bouclier");
 	public String nom;
 
 	public String getNom() {
